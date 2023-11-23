@@ -6,7 +6,7 @@ import Readuser from './components/Readuser';
 import Delete from './components/Delete';
 
 function App() {
-  
+  const [data, setData] = useState([]);
 
   return (
     <div>
@@ -21,10 +21,10 @@ function App() {
         <hr></hr>
 
         <Routes>
-          <Route path='/' element={<Readuser/>}/>
-          <Route path='/create' element={<Createuser/>}/>
-          <Route path='/update' element={<Updateuser/>}/>
-          <Route path='/delete' element={<Delete/>}/>
+          <Route path='/' element={<Readuser data={data} />}/>
+          <Route path='/create' element={<Createuser data={data} setData={setData}/>}/>
+          <Route path='/update' element={<Updateuser data={data} setData={setData}/>}/>
+          <Route path='/delete' element={<Delete data={data} setData={setData}/>}/>
         </Routes>
       </Router>
     </div>

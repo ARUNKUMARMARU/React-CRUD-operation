@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
-function Createuser() {
+function Createuser({data, setData}) {
   
-    const [addUserId, setAddUserId] = useState('');
     const [addUserName, setAddUserName] = useState('');
     const [addDob, setAddDob] = useState('');
     const [addMailId, setAddMailId] = useState('');
@@ -10,7 +9,13 @@ function Createuser() {
    
     const addNewUser = (event)=> {
       event.preventDefault();
-      console.log(addUserId, addDob, addMobileno)
+      //console.log(addUserId, addDob, addMobileno)
+      setData([...data, {addUserName, addDob, addMailId, addMobileno}])
+      
+      setAddUserName('')
+      setAddDob('')
+      setAddMailId('')
+      setAddMobileno('')
     }
 
   return (
@@ -18,14 +23,10 @@ function Createuser() {
     <div>
         <form onSubmit={addNewUser}>
         <div style={{ paddingTop: "20px" }}>
-        <label >
-           User Id &nbsp;&nbsp;
-        <input onChange={(event)=>setAddUserId(event.target.value)} value={addUserId}/>
-        </label> <br /> <br />
-
+          
         <label >
             Name &nbsp;&nbsp;
-        <input onChange={(event)=>setAddUserName(event.target.value)} value={addUserName} />
+        <input onChange={(event)=>setAddUserName(event.target.value)} value={addUserName}></input> 
         </label> <br /> <br />
 
         <label >
