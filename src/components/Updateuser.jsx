@@ -41,8 +41,9 @@ function Updateuser({ data, setData }) {
   return (
     <div>
       <div>
+        <h1>Update User</h1>
         <label>
-          Select Id &nbsp;
+          Select Userid For Update : &nbsp;
 
           <select onChange={handleSelectChange}>
 

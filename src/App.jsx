@@ -13,16 +13,17 @@ function App() {
      
       <Router>
         <div>
-          <Link to='/'>List users</Link> &nbsp; &nbsp; &nbsp;
-        <Link to="/create">Create user</Link> &nbsp; &nbsp; &nbsp;
-        <Link to="/update">Update user</Link>&nbsp; &nbsp; &nbsp;
-        <Link to='/delete'>Delete user</Link>
-        </div>
-        <hr></hr>
+         
+        <Link to="/" style={{padding:"15px", backgroundColor:"lightskyblue"}}>Create user</Link> 
+        <Link to='/userlist' style={{padding:"15px", backgroundColor:"lightskyblue"}}>Users List</Link> 
+        <Link to="/update" style={{padding:"15px",backgroundColor:"lightskyblue"}}>Update user</Link>
+        <Link to='/delete' style={{padding:"15px",backgroundColor:"lightskyblue"}}>Delete user</Link>
+        </div> <br /><br />
+        
 
         <Routes>
-          <Route path='/' element={<Readuser data={data} />}/>
-          <Route path='/create' element={<Createuser data={data} setData={setData}/>}/>
+          <Route path='/userlist' element={<Readuser data={data} />}/>
+          <Route path='/' element={<Createuser data={data} setData={setData}/>}/>
           <Route path='/update' element={<Updateuser data={data} setData={setData}/>}/>
           <Route path='/delete' element={<Delete data={data} setData={setData}/>}/>
         </Routes>

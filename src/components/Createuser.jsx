@@ -21,12 +21,13 @@ function Createuser({data, setData}) {
   return (
 
     <div>
+      <h1>Create User</h1>
         <form onSubmit={addNewUser}>
         <div style={{ paddingTop: "20px" }}>
           
         <label >
             Name &nbsp;&nbsp;
-        <input onChange={(event)=>setAddUserName(event.target.value)} value={addUserName}></input> 
+        <input onChange={(event)=>setAddUserName(event.target.value)} value={addUserName} placeholder='Enter name...'></input> 
         </label> <br /> <br />
 
         <label >
@@ -36,16 +37,16 @@ function Createuser({data, setData}) {
 
         <label >
            Mail id &nbsp;
-        <input type='email' onChange={(event)=>setAddMailId(event.target.value)} value={addMailId}/>
+        <input type='email' placeholder='Enter email...' onChange={(event)=>setAddMailId(event.target.value)} value={addMailId}/>
         </label> <br /> <br />
 
         <label>
            Mobile number &nbsp;
-        <input onChange={(event)=>setAddMobileno(event.target.value)} value={addMobileno}/>
+        <input type="tel" minLength={10} maxLength={10} onChange={(event)=>setAddMobileno(event.target.value)} value={addMobileno} placeholder='10digits' />
         </label> <br /><br />
 
-       <div style={{paddingLeft:"80px"}}>
-       <button type='submit'>submit</button>
+       <div >
+       <button style={{padding:"10px", backgroundColor:'blue', color:'white'}} type='submit'>submit</button>
        </div>
       
     </div>

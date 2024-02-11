@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
-function Delete(data, setData) {
+
+function Delete({data, setData}) {
   const [selectedId, setSeletedId] = useState(null)
 
   const [selectName, setSelectName] = useState("")
@@ -11,7 +12,8 @@ function Delete(data, setData) {
   const deleteUser = (e)=>{
     e.preventDefault();
     let a=structuredClone(data)
-    a[selectedId] = [addUserName(""), addDob(""), addMailId(""), addMobileno("")]
+    console.log(a);
+    a[selectedId] = {addUserName:"", addDob:"", addMailId:"", addMobileno:""}
     setData(a)
   }
 
@@ -26,12 +28,13 @@ function Delete(data, setData) {
   return (
     <div>
       <div>
+        <h1>Delete User</h1>
         <label>
-          Select id &nbsp;
+          Select Userid to delete : &nbsp;
           <select onChange={handlerDeleteUser}>
             <option value="">select...</option>
 
-            {data.map((option, index) => (
+            {data && data.map((option, index) => (
               <option key={index} value={index}>
                 {index}
               </option>
@@ -42,8 +45,8 @@ function Delete(data, setData) {
         </label>
       </div>
       <div>
-        <form onSubmit={deleteUser}>
-        <button type='submit'>delete</button>
+        <form onSubmit={deleteUser}> <br />
+        <button style={{backgroundColor:"red", padding:'8px'}} type='submit'>delete</button>
         </form>
       </div>
     </div>
