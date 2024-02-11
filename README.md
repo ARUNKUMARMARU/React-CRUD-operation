@@ -1,8 +1,6 @@
-# React + Vite
+This react user interface developed for operating the CRUD actions with user details
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Thruogh this aplication 
+    * Can Create a new user with user credentials
+    * Can View the all user details in single page
+    * Can Update and Delete the users using userid
